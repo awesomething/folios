@@ -23,7 +23,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.get("/*", function(req, res){
 
   res.sendFile(
-      path.join(__dirname, "./views/Index.jsx"),
+      path.join(__dirname, "./views"),
     );
 
 })
