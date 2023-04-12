@@ -16,7 +16,7 @@ app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
 // ROUTES
-app.get('/', (req, res) => {
+app.get('/projects', (req, res) => {
   res.send('Welcome!')
 })
 
