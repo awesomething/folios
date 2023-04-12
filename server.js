@@ -1,6 +1,9 @@
 // DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
+const path  = require('path')
+const __dirname = path.dirname("")
+const buildPath = path.join(__dirname  , "./views");
 
 // CONFIGURATION
 require('dotenv').config()
@@ -9,6 +12,7 @@ const app = express()
 // console.log(process.env.NODE_ENV)
 
 // MIDDLEWARE
+app.use(express.static(buildPath))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
@@ -16,6 +20,14 @@ app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
 // ROUTES
+app.get("/*", function(req, res){
+
+  res.sendFile(
+      path.join(__dirname, "./views/Index.jsx"),
+    );
+
+})
+
 app.get('/', (req, res) => {
   res.redirect('/projects')
 })
