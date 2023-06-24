@@ -12,11 +12,12 @@ const app = express()
 // console.log(process.env.NODE_ENV)
 
 // MIDDLEWARE
+app.set('view engine', 'jsx')
+app.set('view engine', __dirname + '/views')
 app.use(express.static(buildPath))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
-app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
 // ROUTES
