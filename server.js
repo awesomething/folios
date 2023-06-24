@@ -3,7 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const path  = require('path')
 //const __dirname = path.resolve()
-const buildPath = path.join(__dirname, "./views");
+const buildPath = path.join(__dirname, "/views");
 
 // CONFIGURATION
 require('dotenv').config()
@@ -23,7 +23,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.get("/*", function(req, res){
 
   res.sendFile(
-      path.join(__dirname, "./views"),
+      path.join(__dirname, "/views"),
     );
 
 })
