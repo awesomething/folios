@@ -2,7 +2,7 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const path  = require('path')
-//const __dirname = path.resolve()
+const __dirname = path.resolve()
 //const buildPath = path.join(__dirname, "/views");
 
 // CONFIGURATION
