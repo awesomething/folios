@@ -7,7 +7,7 @@ const Project = require('../models/project.js')
 // Routes
 // INDEX 1/7
 projects.get('/', (req, res) => {
-    res.render('Index',
+    res.render('index',
       {
         projects: Project,
         title: 'Index Page'
